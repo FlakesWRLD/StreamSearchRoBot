@@ -24,10 +24,9 @@ torrentbot = bot.start(bot_token=Config.BOT_TOKEN)
 async def search(event):
     replied_user = await event.client(GetFullUserRequest(event.sender_id))
     firstname = replied_user.user.first_name
-    await event.reply(message=f"**Hello, {firstname}, I Am Inline Stream Search Bot.** \n**Using Me You Can Fetch Torrent Magnet & Youtube Videos Links** \n**By @Discovery_Updates**",
+    await event.reply(message=f"**Hello, {firstname}, I Am Inline Stream Search Bot.** \n**Using Me You Can Search Youtube Videos Links** \n**By @Discovery_Updates**",
                       buttons=[
-                      [Button.switch_inline("Search Youtube", query="yt ", same_peer=True)],
-                      [Button.switch_inline("Search Torrent", query="torrent ", same_peer=True)],
+                      [Button.switch_inline("Search Youtube", query="", same_peer=True)],
                               ]
                      )
 @torrentbot.on(events.NewMessage(pattern="^/updates$"))
@@ -95,7 +94,7 @@ async def inline_id_handler(event: events.InlineQuery.Event):
     await event.answer(results)
 
 
-@torrentbot.on(events.InlineQuery(pattern=r"yt (.*)"))
+@torrentbot.on(events.InlineQuery(pattern=r"(.*)"))
 async def inline_id_handler(event: events.InlineQuery.Event):
     builder = event.builder
     testinput = event.pattern_match.group(1)
@@ -123,7 +122,7 @@ async def inline_id_handler(event: events.InlineQuery.Event):
         td = mio["duration"]
         tw = mio["views"]
         kekme = f"https://img.youtube.com/vi/{fridayz}/hqdefault.jpg"
-        okayz = (f"**Title :** `{thum}` \n**Link :** `{mo}` \n**Channel :** `{thums}` \n**Views :** `{tw}` \n**Duration :** `{td}`")
+        okayz = (f"**Title :** `{thum}` \n**Link :** {mo} \n**Channel :** `{thums}` \n**Views :** `{tw}` \n**Duration :** `{td}`")
         hmmkek = f'Channel : {thums} \nDuration : {td} \nViews : {tw}'
         results.append(await event.builder.article(
                 title=thum,
