@@ -122,13 +122,13 @@ async def inline_id_handler(event: events.InlineQuery.Event):
         td = mio["duration"]
         tw = mio["views"]
         kekme = f"https://img.youtube.com/vi/{fridayz}/hqdefault.jpg"
-        okayz = (f"**Title :** `{thum}` \n**Link :** {mo} \n**Channel :** `{thums}` \n**Views :** `{tw}` \n**Duration :** `{td}`")
-        hmmkek = f'Channel : {thums} \nDuration : {td} \nViews : {tw}'
+        okayz = (f"**Video Title:** `{thum}` \n**Video Link:** {mo} \n**Channel Name:** `{thums}` \n**Views:** `{tw}` \n**Duration:** {td}")
+        hmmkek = f'Channel Name: {thums} \nDuration: {td} \nViews: {tw}'
         results.append(await event.builder.article(
                 title=thum,
                 description=hmmkek,
                 text=okayz,
-                buttons=Button.switch_inline("Search Again", query="yt ", same_peer=True),
+                buttons=Button.switch_inline("Search Again", query="", same_peer=True),
             )
                                )
     await event.answer(results)
