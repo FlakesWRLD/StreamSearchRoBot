@@ -24,11 +24,10 @@ torrentbot = bot.start(bot_token=Config.BOT_TOKEN)
 async def search(event):
     replied_user = await event.client(GetFullUserRequest(event.sender_id))
     firstname = replied_user.user.first_name
-    await event.reply(message=f"**Hello, {firstname}, I Am Inline Stream Search Bot.** \n**Using Me You Can Fetch Torrent Magnet, Youtube Videos Link, Jio Saavan Music Links** \n**(C) @Discovery_Updates**",
+    await event.reply(message=f"**Hello, {firstname}, I Am Inline Stream Search Bot.** \n**Using Me You Can Fetch Torrent Magnet & Youtube Videos Links** \n**By @Discovery_Updates**",
                       buttons=[
                       [Button.switch_inline("Search Youtube", query="yt ", same_peer=True)],
                       [Button.switch_inline("Search Torrent", query="torrent ", same_peer=True)],
-                      [Button.switch_inline("Search JioMusic", query="jm ", same_peer=True)],
                               ]
                      )
 @torrentbot.on(events.NewMessage(pattern="^/updates$"))
@@ -173,18 +172,17 @@ async def inline_handler(event):
         if query == None or " ": 
             resulte = builder.article(
                 title="Usage Guide.",
-                description="(C) @StarkGanG",
-                text=f"**How To Use Me?** \n**Youtube :** `@{firstname} yt <query>` \n**Example :** `@{firstname} yt why we lose song` \n\n**Torrent :** `@{firstname} torrent <query>` \n**Example :** `@{firstname} torrent avengers endgame ` \n\n**JioSaavan :** `@{firstname} jm <query>` \n**Example :** `@{firstname} jm dilbaar`",
+                description="Discovery Projects",
+                text=f"**How To Use Me?** \n**Youtube :** `@{firstname} yt <query>` \n**Example :** `@{firstname} yt why we lose song` \n\n**Torrent :** `@{firstname} torrent <query>` \n**Example :** `@{firstname} torrent avengers endgame `",
                 buttons=[
                       [Button.url("Contact Me", f"t.me/{firstname}")],
                       [Button.switch_inline("Search Youtube", query="yt ", same_peer=True)],
                       [Button.switch_inline("Search Torrent", query="torrent ", same_peer=True)],
-                      [Button.switch_inline("Search JioSaavn", query="jm ", same_peer=True)],
                 ]
                              
             )
             await event.answer([resulte])
-print("Your Stream Search Bot is Alive. Thank You !")
+print("Stream Search Bot is Alive. Thank You !")
 def startbot():
     torrentbot.run_until_disconnected()
 
