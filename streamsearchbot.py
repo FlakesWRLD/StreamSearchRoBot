@@ -8,6 +8,8 @@ import re
 import urllib
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+
 from Configs import Config
 from loggers import logging
 import os
@@ -31,8 +33,14 @@ async def search(event):
                      )
 @torrentbot.on(events.NewMessage(pattern="^/updates$"))
 async def search(event):
-    await event.reply('<b>Join Our Update Channel :</b> [Flix Bots](https://t.me/FlixBots)', parse_mode="HTML")
-
+    await event.reply('<b>Join Our Update Channel :</b> [Flix Bots](https://t.me/FlixBots)', parse_mode="HTML", disable_web_page_preview=true,
+                      button = [
+            [
+             InlineKeyboardButton(text = 'Support Chat', url = https://t.me/flixbots),
+             InlineKeyboardButton(text = 'Support Group', url = "https://t.me/MirrorZone")
+            ],
+        ]
+                     )
 @torrentbot.on(events.InlineQuery(pattern=r"torrent (.*)"))
 async def inline_id_handler(event: events.InlineQuery.Event):
     builder = event.builder
