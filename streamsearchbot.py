@@ -33,7 +33,7 @@ async def search(event):
                      )
 @torrentbot.on(events.NewMessage(pattern="^/updates$"))
 async def search(event):
-    await event.reply('<b>Join Our Update Channel :</b> [Flix Bots](https://t.me/FlixBots)', parse_mode="HTML", disable_web_page_preview=true,
+    await event.reply('<b>Join Our Update Channel :</b> [Flix Bots](https://t.me/FlixBots)', parse_mode="HTML", disable_web_page_preview=True,
                       button = [
             [
              InlineKeyboardButton(text = 'Support Chat', url = "https://t.me/flixbots"),
