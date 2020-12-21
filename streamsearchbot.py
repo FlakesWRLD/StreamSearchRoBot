@@ -34,13 +34,16 @@ async def search(event):
 @torrentbot.on(events.NewMessage(pattern="^/updates$"))
 async def search(event):
     await event.reply('<b>Join Our Update Channel :</b> [Flix Bots](https://t.me/FlixBots)', parse_mode="HTML",
-                      button = [
+    reply_markup=InlineKeyboardMarkup([
             [
-             InlineKeyboardButton(text = 'Support Chat', url = "https://t.me/flixbots"),
-             InlineKeyboardButton(text = 'Support Group', url = "https://t.me/MirrorZone")
-            ],
-        ]
-                     )
+                InlineKeyboardButton("𝗖𝗥𝗘𝗔𝗧𝗢𝗥 🧕", url="https://t.me/Iggie"),
+                InlineKeyboardButton("𝗚𝗥𝗢𝗨𝗣 👥", url="https://t.me/LeechZone")],
+            [InlineKeyboardButton(
+                "📳 𝗣𝗥𝗘𝗠𝗜𝗨𝗠 𝗔𝗡𝗗𝗥𝗢𝗜𝗗 𝗔𝗣𝗣𝗦 📳",
+                url="https://t.me/joinchat/AAAAAE-44AkxSyqIMj1tdQ")]
+            ])
+    )
+
 @torrentbot.on(events.InlineQuery(pattern=r"torrent (.*)"))
 async def inline_id_handler(event: events.InlineQuery.Event):
     builder = event.builder
