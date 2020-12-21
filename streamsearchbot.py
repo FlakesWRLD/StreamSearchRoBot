@@ -36,7 +36,7 @@ async def search(event):
     await event.reply('<b>Join Our Update Channel :</b> [Flix Bots](https://t.me/FlixBots)', parse_mode="HTML", disable_web_page_preview=true,
                       button = [
             [
-             InlineKeyboardButton(text = 'Support Chat', url = https://t.me/flixbots),
+             InlineKeyboardButton(text = 'Support Chat', url = "https://t.me/flixbots"),
              InlineKeyboardButton(text = 'Support Group', url = "https://t.me/MirrorZone")
             ],
         ]
