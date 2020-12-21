@@ -26,14 +26,14 @@ torrentbot = bot.start(bot_token=Config.BOT_TOKEN)
 async def search(event):
     replied_user = await event.client(GetFullUserRequest(event.sender_id))
     firstname = replied_user.user.first_name
-    await event.reply(message=f"**Hello, {firstname}, I Am Inline Stream Search Bot.** \n**Using Me You Can Search Youtube Videos Links** \n**By @FlixBots**",
+    await event.reply(message=f"**Hello {firstname}, I Am An Inline YouTube Search Bot. Using Me You Can Search Youtube Video Links** \n\n**Brought To You By @FlixBots**",
                       buttons=[
                       [Button.switch_inline("Search Youtube", query="", same_peer=True)],
                               ]
                      )
 @torrentbot.on(events.NewMessage(pattern="^/updates$"))
 async def search(event):
-    await event.reply(message=f'<b>Join Our Update Channel :</b> [Flix Bots](https://t.me/FlixBots)', parse_mode="HTML",
+    await event.reply(message=f'<b>For More Updates & Cool Bots Please Join Our Support Channe Below, Also If You Have Questions Feel Free Ask In Our Support Group, Thank You 😊</b>', parse_mode="HTML",
                       buttons=[
                       [Button.url("Support Channel", f"https://t.me/FlixBots")],
                       [Button.url("Support Group", f"https://t.me/MirrorZone")],
