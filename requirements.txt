@@ -6,3 +6,4 @@ requests
 telegraph
 youtube-search-python
 flixpy
+pyrogram
