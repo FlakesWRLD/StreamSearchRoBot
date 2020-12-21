@@ -8,7 +8,7 @@ import re
 import urllib
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message, Clienr, filters
 
 from Configs import Config
 from loggers import logging
