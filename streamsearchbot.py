@@ -8,7 +8,7 @@ import re
 import urllib
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 
 from Configs import Config
 from loggers import logging
@@ -33,8 +33,9 @@ async def search(event):
                      )
 @torrentbot.on(events.NewMessage(pattern="^/updates$"))
 async def search(event):
-    await event.reply('<b>Join Our Update Channel :</b> [Flix Bots](https://t.me/FlixBots)', parse_mode="HTML",
-    reply_markup=InlineKeyboardMarkup([
+    await event.reply(
+         text='<b>Join Our Update Channel :</b> [Flix Bots](https://t.me/FlixBots)', parse_mode="HTML",
+         reply_markup=InlineKeyboardMarkup([
             [
                 InlineKeyboardButton("𝗖𝗥𝗘𝗔𝗧𝗢𝗥 🧕", url="https://t.me/Iggie"),
                 InlineKeyboardButton("𝗚𝗥𝗢𝗨𝗣 👥", url="https://t.me/LeechZone")],
