@@ -171,7 +171,7 @@ async def inline_handler(event):
         if query == None or " ": 
             resulte = builder.article(
                 title="Usage Guide.",
-                description="Discovery Projects",
+                description="Flix Bots",
                 text=f"**How To Use Me?** \n**Youtube :** `@{firstname} yt <query>` \n**Example :** `@{firstname} yt why we lose song` \n\n**Torrent :** `@{firstname} torrent <query>` \n**Example :** `@{firstname} torrent avengers endgame `",
                 buttons=[
                       [Button.url("Contact Me", f"t.me/{firstname}")],
